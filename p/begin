@@ -1,0 +1,40 @@
+{% assign mutor_patch_ctr = mutor_patch_ctr | plus: 1 %}
+{% assign mutor_patch_pfx = mutor_patch_ctr | prepend: "mutor_patch_" | append: "_" %}
+{% assign mutor_patch_overlay = false %}
+
+{% if tonejs_loaded != true %}
+<script src="https://unpkg.com/tone@14.7.39/build/Tone.js"></script>
+{% assign tonejs_loaded = true %}
+{% endif %}
+
+{% if mutor_audiolib_loaded != true %}
+{% include p/lib %}
+{% assign mutor_audiolib_loaded = true %}
+{% endif %}
+
+<!-- begin mutor patch {{ mutor_patch_ctr }} -->
+
+<script type="text/javascript">
+//let draw_fns_{{ mutor_patch_ctr }} = {};
+let draw_fns_{{ mutor_patch_ctr }} = [];
+let transport_fns_{{ mutor_patch_ctr }} = {play: [], stop: []};
+let color_{{ mutor_patch_ctr }} = MUTOR.rbright();
+let playing_{{ mutor_patch_ctr }} = false;
+
+function draw_{{ mutor_patch_ctr }}()
+{
+    draw_fns_{{ mutor_patch_ctr }}.forEach(f => f());
+    if(playing_{{ mutor_patch_ctr }} == true){
+        window.requestAnimationFrame(draw_{{ mutor_patch_ctr }});
+	//Tone.Draw.schedule(draw_{{ mutor_patch_ctr }}, Tone.Draw.now());
+    }
+}
+
+function transport_{{ mutor_patch_ctr }}(action)
+{
+    transport_fns_{{ mutor_patch_ctr }}[action].forEach(f => f());
+}
+
+</script>
+
+<div class="mutor-patch">

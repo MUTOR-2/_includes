@@ -1,0 +1,12 @@
+
+<!-- begin mutor patch oscillator -->
+<script type="text/javascript">
+  const {{ include.name }} = new Tone.Oscillator({{ include.freq }}, "{{ include.type }}");
+  transport_fns_{{ mutor_patch_ctr }}.play.push(() => {
+      {{ include.name }}.start();
+  });
+  transport_fns_{{ mutor_patch_ctr }}.stop.push(() => { {{ include.name }}.stop(); });
+  Tone.loaded().then(() => {
+  });
+</script>
+<!-- end mutor patch oscillator -->

@@ -1,0 +1,8 @@
+<div class="unit-references" id="unit-references" markdown="1">
+# References
+<ol>
+{% for r in page.references %}
+<li>{% include format_reference ref=r %}</li>
+{% endfor %}
+</ol>
+</div>

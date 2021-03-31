@@ -1,0 +1,19 @@
+{% assign r = include.ref %}
+{% assign rk = r[0] %}
+{% assign rv = r[1] %}
+
+<span id="{{ rk }}" markdown="1">
+{%- for a in rv.authors -%}
+{{- a.lastname -}}, {{ a.firstname -}}
+{%- if forloop.last == true -%}
+{%- assign l = a.firstname | split: "" | last -%}
+{%- if l != "." -%}
+.
+{%- endif -%}
+{%- else %}
+&
+{% endif -%}
+{%- endfor %}
+"{{ rv.title }}". {{ rv.publication }}. {{ rv.year }}.
+{% if rv.doi %}<a href="{{ rv.doi }}">{{ rv.doi }}</a>{% endif %}
+</span>

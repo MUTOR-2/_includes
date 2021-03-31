@@ -1,0 +1,2 @@
+</div>
+{% assign mutor_patch_overlay = false %}

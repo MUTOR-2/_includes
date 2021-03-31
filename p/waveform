@@ -1,0 +1,25 @@
+
+<!-- begin mutor patch waveform -->
+{% if include.width %}
+{% assign width = include.width %}
+{% else %}
+{% assign width = "600px" %}
+{% endif %}
+
+{% if include.height %}
+{% assign height = include.height %}
+{% else %}
+{% assign height = "200px" %}
+{% endif %}
+
+{% if mutor_patch_overlay == true %}
+<canvas class="mutor-patch-waveform mutor-patch-layer" id="{{ include.name }}" width="{{ width  }}" height="{{ height }}" style="border:1px solid #000000;"></canvas>
+{% else %}
+<canvas class="mutor-patch-waveform" id="{{ include.name }}" width="{{ width }}" height="{{ height }}" style="border:1px solid #000000;"></canvas>
+{% endif %}
+<script type="text/javascript">
+    Tone.loaded().then(()=>{
+        MUTOR_alib.draw_waveform({{ include.buffer }}, document.getElementById("{{ include.name }}"));
+    });
+</script>
+<!-- end mutor patch waveform -->
