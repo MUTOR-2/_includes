@@ -27,7 +27,7 @@
   <div class="header-left">
     <span class="header-left-content">
       <span class="mutor-logo"> 
-	<a href ="{{ "/" | relative_url }}"><img src="/MUTOR/assets/images/mutor_logo_f1.png" alt="{{ site.title | escape }}" width="260px" height="98px"></a>
+	<a href ="{{ "/" | relative_url }}"><img src="{{ site.baseurl }}/assets/images/mutor_logo_f1.png" alt="{{ site.title | escape }}" width="260px" height="98px"></a>
       </span>
       <span class="menu">
 	<nav class="site-nav">
@@ -46,13 +46,13 @@
     		  </ul>
     		</li>
 		<li class="sep"><span class="sep-space"></span><span class="sep-line"></span><span class="sep-space"></span></li>
-    		<li><a class="page-link" href="/MUTOR{{ refs_page.url }}">{{ refs_page.title }}</a></li>
+    		<li><a class="page-link" href="{{ site.baseurl }}{{ refs_page.url }}">{{ refs_page.title }}</a></li>
 		<li class="sep"><span class="sep-space"></span><span class="sep-line"></span><span class="sep-space"></span></li>
-    		<li><a class="page-link" href="/MUTOR{{ disq_page.url }}">{{ disq_page.title }}</a></li>
+    		<li><a class="page-link" href="{{ site.baseurl }}{{ disq_page.url }}">{{ disq_page.title }}</a></li>
 		<li class="sep"><span class="sep-space"></span><span class="sep-line"></span><span class="sep-space"></span></li>
-    		<li><a class="page-link" href="/MUTOR{{ about_page.url }}">{{ about_page.title }}</a></li>
+    		<li><a class="page-link" href="{{ site.baseurl }}{{ about_page.url }}">{{ about_page.title }}</a></li>
 		<li class="sep"><span class="sep-space"></span><span class="sep-line"></span><span class="sep-space"></span></li>
-		<li><a class="page-link" href="/MUTOR{{ team_page.url }}">{{ team_page.title }}</a></li>
+		<li><a class="page-link" href="{{ site.baseurl }}{{ team_page.url }}">{{ team_page.title }}</a></li>
 		<li class="sep"><span class="sep-space"></span><span class="sep-line"></span><span class="sep-space"></span></li>
     	      </ul>
 	    </div>
