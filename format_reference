@@ -15,5 +15,5 @@
 {% endif -%}
 {%- endfor %}
 "{{ rv.title }}". {{ rv.publication }}. {{ rv.year }}.
-{% if rv.doi %}<a href="{{ rv.doi }}">{{ rv.doi }}</a>{% endif %}
+{% if rv.doi %}<a href="https://doi.org/{{ rv.doi }}">{{ rv.doi }}</a>{% endif %}
 </span>
