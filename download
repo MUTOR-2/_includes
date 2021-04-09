@@ -1,0 +1,24 @@
+<h2>
+All MUTOR courses are hosted on GitHub:<br>
+<a id="dl1" href="https://github.com/mutor-2">
+https://github.com/mutor-2
+</a>
+</h2>
+<p>
+<h2>
+The materials for this course may be found here:<br>
+<a id="dl2" href="https://github.com/mutor-2{{ site.baseurl }}">
+https://github.com/mutor-2{{ site.baseurl }}
+</a>
+</h2>
+
+<script type="text/javascript">
+{
+  let c = MUTOR.rbright();
+  let l = document.getElementById("dl1");
+  l.style['background-color'] = c;
+
+  l = document.getElementById("dl2");
+  l.style['background-color'] = c;
+}
+</script>
