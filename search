@@ -1,4 +1,5 @@
-<form method="get" action="http://www.google.com/search" target="_blank">
-<input type="hidden" name="sitesearch" value="{{ site.url }}{{ site.baseurl}}" />
-<input type="text" name="q" maxlength="255" placeholder="Search" class="mutor-search" />
+<form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="{{ site.url }}{{ site.baseurl }}">
+<input autocomplete="on" class="form-control search" name="q" placeholder="Search {{ site.url }}{{ site.baseurl }}" required="required"  type="text">
+<button class="button" type="submit">Search</button>
 </form>
