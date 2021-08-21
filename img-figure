@@ -16,6 +16,12 @@
 {% assign author = "Unknown" %}
 {% endif %}
 
+{% if include.adapted %}
+{% assign adapted = include.adapted %}
+{% else %}
+{% assign adapted = "Unknown" %}
+{% endif %}
+
 {% if include.copyright %}
 {% assign copyright = include.copyright %}
 {% else %}
@@ -44,6 +50,8 @@
     <span id="image-cover-caption-text">
     </span>
     <span id="image-cover-caption-author" style="padding-left: 20px;">
+    </span>
+    <span id="image-cover-caption-adapted" style="padding-left: 20px;">
     </span>
     <span id="image-cover-caption-copyright" style="padding-left: 20px;">
     </span>
@@ -74,8 +82,15 @@ for (i = 0; i < document.images.length; i++) {
         modal.classList.add("model-shown");
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
+        {% if include.author %}
+        author.innerHTML = 'Made by: {{ author }}';
+        {% endif %}
+        {% if include.adapted %}
+        adapted.innerHTML = 'Adapted from: {{ adapted }}';
+        {% endif %}
+        {% if include.copyright %}
         copyright.innerHTML = 'Copyright: {{ copyright }}';
-        author.innerHTML = 'Author: {{ author }}';
+        {% endif %}
     }
 }
 </script>
