@@ -87,11 +87,17 @@ for (i = 0; i < document.images.length; i++) {
 
     img.onclick = function(){
         modal.classList.add("model-shown");
-        adapted.innerHTML = "Adapted from: {{ adapted }}";
-        copyright.innerHTML = "Copyright: {{ copyright }}";
-        captionText.innerHTML = this.alt;
-        author.innerHTML = "By TEST";
         modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+        {% if include.author %}
+        author.innerHTML = "By {{ author }}";
+        {% endif %}
+        {% if include.adapted %}
+        adapted.innerHTML = "Adapted from: {{ adapted }}";
+        {% endif %}
+        {% if include.copyright %}
+        copyright.innerHTML = "Copyright: {{ copyright }}";
+        {% endif %}
     }
 }
 </script>
