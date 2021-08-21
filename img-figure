@@ -10,6 +10,12 @@
 {% assign height = "auto" %}
 {% endif %}
 
+{% if include.author %}
+{% assign author = include.author %}
+{% else %}
+{% assign author = "Unknown" %}
+{% endif %}
+
 {% if include.copyright %}
 {% assign copyright = include.copyright %}
 {% else %}
@@ -37,6 +43,8 @@
   <div id="image-cover-caption">
     <span id="image-cover-caption-text">
     </span>
+    <span id="image-cover-caption-author" style="padding-left: 20px;">
+    </span>
     <span id="image-cover-caption-copyright" style="padding-left: 20px;">
     </span>
   </div>
@@ -47,6 +55,7 @@ var modal = document.getElementById('image-cover-modal');
 var modalImg = document.getElementById("image-cover-image");
 var captionText = document.getElementById("image-cover-caption-text");
 var copyright = document.getElementById("image-cover-caption-copyright");
+var author = document.getElementById("image-cover-caption-author");
 var span = document.getElementsByClassName("image-cover-close")[0];
 
 // When the user clicks on <span> (x), close the modal
@@ -66,6 +75,7 @@ for (i = 0; i < document.images.length; i++) {
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
         copyright.innerHTML = 'Copyright: {{ copyright }}';
+        author.innerHTML = 'Author: {{ author }}';
     }
 }
 </script>
