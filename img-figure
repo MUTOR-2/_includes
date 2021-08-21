@@ -87,11 +87,11 @@ for (i = 0; i < document.images.length; i++) {
 
     img.onclick = function(){
         modal.classList.add("model-shown");
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
         {% if include.author %}
         author.innerHTML = "By {{ author }}";
         {% endif %}
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
         {% if include.adapted %}
         adapted.innerHTML = "Adapted from: {{ adapted }}";
         {% endif %}
