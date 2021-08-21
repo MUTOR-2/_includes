@@ -10,6 +10,12 @@
 {% assign height = "auto" %}
 {% endif %}
 
+{% if include.copyright %}
+{% assign copyright = include.copyright %}
+{% else %}
+{% assign copyright = "CC BY-SA 4.0" %}
+{% endif %}
+
 <div style="display: block; text-align: center; float: center">
 <figure class="fig">
   <div style="text-align:">
@@ -28,13 +34,19 @@
 
 <div id="image-cover-modal" class="image-cover-modal">
   <img id="image-cover-image" class="image-cover-modal-content">
-  <div id="image-cover-caption"></div>
+  <div id="image-cover-caption">
+    <span id="image-cover-caption-text">
+    </span>
+    <span id="image-cover-caption-copyright">
+    </span>
+  </div>
 </div>
 <script>
 // Get the DOM
 var modal = document.getElementById('image-cover-modal');
 var modalImg = document.getElementById("image-cover-image");
-var captionText = document.getElementById("image-cover-caption");
+var captionText = document.getElementById("image-cover-caption-text");
+var copyright = document.getElementById("image-cover-caption-copyright");
 var span = document.getElementsByClassName("image-cover-close")[0];
 
 // When the user clicks on <span> (x), close the modal
@@ -53,6 +65,7 @@ for (i = 0; i < document.images.length; i++) {
         modal.classList.add("model-shown");
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
+        copyright.innerHTML = 'Copyright: {{ copyright }}';
     }
 }
 </script>
