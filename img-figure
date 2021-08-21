@@ -92,7 +92,7 @@ for (i = 0; i < document.images.length; i++) {
         author.innerHTML = "By {{ author }}";
         {% endif %}
         {% if include.adapted %}
-        adapted.innerHTML = 'Adapted from: {{ adapted }}';
+        adapted.innerHTML = 'Adapted from: test';
         {% endif %}
         {% if include.copyright %}
         copyright.innerHTML = 'Copyright: {{ copyright }}';
