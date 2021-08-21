@@ -68,6 +68,7 @@
 var modal = document.getElementById('image-cover-modal');
 var modalImg = document.getElementById("image-cover-image");
 var captionText = document.getElementById("image-cover-caption-text");
+var adapted = document.getElementById("image-cover-caption-adapted");
 var copyright = document.getElementById("image-cover-caption-copyright");
 var author = document.getElementById("image-cover-caption-author");
 var span = document.getElementsByClassName("image-cover-close")[0];
@@ -86,8 +87,8 @@ for (i = 0; i < document.images.length; i++) {
 
     img.onclick = function(){
         modal.classList.add("model-shown");
-        adapted.innerHTML = 'Adapted from: {{ adapted }}';
-        copyright.innerHTML = 'Copyright: {{ copyright }}';
+        adapted.innerHTML = "Adapted from: {{ adapted }}";
+        copyright.innerHTML = "Copyright: {{ copyright }}";
         captionText.innerHTML = this.alt;
         author.innerHTML = "By TEST";
         modalImg.src = this.src;
