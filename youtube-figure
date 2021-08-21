@@ -1,0 +1,21 @@
+{% if include.width %}
+{% assign width = include.width %}
+{% else %}
+{% assign width = 560 %}
+{% endif %}
+
+{% if include.height %}
+{% assign height = include.height %}
+{% else %}
+{% assign height = 315 %}
+{% endif %}
+
+{% include begin-figure description="{{ include.description }}" %}
+
+<div style="display: block; text-align: center; float: center">
+<iframe width="{{ width }}" height="{{ height }}" src="https://www.youtube.com/embed/{{ include.id }}" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+picture-in-picture" allowfullscreen></iframe>
+</div>
+
+{% include end-figure %}
