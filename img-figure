@@ -10,11 +10,17 @@
 {% assign height = "auto" %}
 {% endif %}
 
-{% if include.author %}
-{% assign author = include.author %}
-{% else %}
-{% assign author = "Unknown" %}
+{%- if include.author -%}
+{% capture imgauthor %}{{ include.author | downcase }}{% endcapture %}
+{% for a in site.contributors %}
+{% if imgauthor == a[0] | downcase %}
+{% assign author = a[1].fullname %}
+{% break %}
 {% endif %}
+{% endfor %}
+{%- else -%}
+{% assign author = "Unknown" %}
+{%- endif -%}
 
 {% if include.adapted %}
 {% assign adapted = include.adapted %}
