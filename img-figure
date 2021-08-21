@@ -86,11 +86,11 @@ for (i = 0; i < document.images.length; i++) {
 
     img.onclick = function(){
         modal.classList.add("model-shown");
-        modalImg.src = this.src;
         captionText.innerHTML = this.alt;
         author.innerHTML = "By TEST";
         adapted.innerHTML = 'Adapted from: {{ adapted }}';
         copyright.innerHTML = 'Copyright: {{ copyright }}';
+        modalImg.src = this.src;
     }
 }
 </script>
