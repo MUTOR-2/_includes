@@ -89,10 +89,10 @@ for (i = 0; i < document.images.length; i++) {
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
         {% if include.author %}
-        author.innerHTML = "By {{ author }}";
+        author.innerHTML = "By TEST";
         {% endif %}
         {% if include.adapted %}
-        adapted.innerHTML = 'Adapted from: test';
+        adapted.innerHTML = 'Adapted from: {{ adapted }}';
         {% endif %}
         {% if include.copyright %}
         copyright.innerHTML = 'Copyright: {{ copyright }}';
