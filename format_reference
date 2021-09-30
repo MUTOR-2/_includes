@@ -4,7 +4,8 @@
 
 <span id="{{ rk }}" markdown="1">
 {%- for a in rv.authors -%}
-{{- a.lastname -}}, {{ a.firstname -}}
+{{- a.lastname -}}
+{%- if a.firstname -%}, {{ a.firstname -}}{% endif %}
 {%- if forloop.last == true -%}
 {%- assign l = a.firstname | split: "" | last -%}
 {%- if l != "." -%}
