@@ -1,0 +1,72 @@
+{% if page.title == "Home" %}
+
+{% assign backtotext = "MUTOR Home" %}
+{% capture backtolink %}
+{{ site.url }}
+{% endcapture %}
+
+{% else %}
+
+{% assign backtotext = "Home" %}
+{% capture backtolink %}
+{{ site.url }}{{ site.baseurl }}/
+{% endcapture %}
+
+{% endif %}
+
+{% if page.layout == "unit" %}
+
+{% capture pagetitle %}
+Unit {{ page.number | escape }}: {{ page.title | escape }}
+{% endcapture %}
+
+{% else %}
+
+{% capture pagetitle %}
+{{ page.title | escape }}
+{% endcapture %}
+
+{% endif %}
+
+<!-- back home -->
+<div class="page-title">
+  <span class="lpre-pre-wrapper">
+    <div class="arrow-left"></div>
+    <span class="lpre-pre"></span>
+  </span>
+  <span class="lpre-wrapper">
+    <span class="lpre"></span>
+  </span>
+  <span class="mutor-home">
+    <h1 class="page-title">
+      <a href="{{ backtolink }}">{{ backtotext }}</a>
+    </h1>
+  </span>
+  <span class="lpost-wrapper">
+    <span class="lpost"></span>
+  </span>
+  <span class="lpost-post-wrapper">
+    <span class="lpost-post"></span>
+  </span>
+</div>
+
+<!-- page title -->
+<div class="page-title">
+  <span class="pre-pre-wrapper">
+    <span class="pre-pre"></span>
+  </span>
+  <span class="pre-wrapper">
+    <span class="pre">
+      <div class="arrow-right"></div>
+    </span>
+  </span>
+  <span class="title">
+    <h1 class="page-title">{{ pagetitle }}</h1>
+  </span>
+  <span class="post-wrapper">
+    <span class="post"></span>
+  </span>
+  <span class="post-post-wrapper">
+    <span class="post-post"></span>
+  </span>
+</div>
